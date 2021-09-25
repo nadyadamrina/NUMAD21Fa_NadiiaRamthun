@@ -2,6 +2,7 @@ package edu.neu.madcourse.numad21fa_nadiiaramthun;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -20,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(view.getContext(), "Nadiia Ramthun\nramthun.n@northeastern.edu", Toast.LENGTH_LONG).show();
                 break;
             }
+            case R.id.btn_clicky_clicky: {
+                openClickyClickyActivity();
+                break;
+            }
         }
+    }
+
+    public void openClickyClickyActivity() {
+        Intent intent = new Intent(this, ClickyClickyActivity.class);
+        startActivity(intent);
     }
 }
