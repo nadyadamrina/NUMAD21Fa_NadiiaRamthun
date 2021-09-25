@@ -14,10 +14,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onAboutBtnClick(View view) {
-        Toast.makeText(view.getContext(),
-                "Nadiia Ramthun\nramthun.n@northeastern.edu",
-                Toast.LENGTH_LONG)
-                .show();
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_about: {
+                Toast.makeText(view.getContext(), "Nadiia Ramthun\nramthun.n@northeastern.edu", Toast.LENGTH_LONG).show();
+                break;
+            }
+        }
     }
 }
