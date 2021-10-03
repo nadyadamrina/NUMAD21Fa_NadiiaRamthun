@@ -16,4 +16,5 @@
     <string name="pressedE">Pressed: E</string>
     <string name="pressedF">Pressed: F</string>
     <string name="link_collector">Link Collector</string>
+    <string name="add_item">Add item</string>
 </resources>
