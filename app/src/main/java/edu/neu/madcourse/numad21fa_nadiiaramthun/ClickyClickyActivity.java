@@ -15,12 +15,12 @@ public class ClickyClickyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicky_clicky);
 
-        Button buttonA = (Button) findViewById(R.id.btn_A);
-        Button buttonB = (Button) findViewById(R.id.btn_B);
-        Button buttonC = (Button) findViewById(R.id.btn_C);
-        Button buttonD = (Button) findViewById(R.id.btn_D);
-        Button buttonE = (Button) findViewById(R.id.btn_E);
-        Button buttonF = (Button) findViewById(R.id.btn_F);
+        Button buttonA = findViewById(R.id.btn_A);
+        Button buttonB = findViewById(R.id.btn_B);
+        Button buttonC = findViewById(R.id.btn_C);
+        Button buttonD = findViewById(R.id.btn_D);
+        Button buttonE = findViewById(R.id.btn_E);
+        Button buttonF = findViewById(R.id.btn_F);
 
         View.OnTouchListener onTouchListener = new MyTouchListener();
         buttonA.setOnTouchListener(onTouchListener);
@@ -64,7 +64,7 @@ public class ClickyClickyActivity extends AppCompatActivity {
         }
 
         private void handleButtonTouched(int pressedLetter, MotionEvent event) {
-            TextView textView = (TextView) findViewById(R.id.txt_info_pressed);
+            TextView textView = findViewById(R.id.txt_info_pressed);
             switch(event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     textView.setText(pressedLetter);
