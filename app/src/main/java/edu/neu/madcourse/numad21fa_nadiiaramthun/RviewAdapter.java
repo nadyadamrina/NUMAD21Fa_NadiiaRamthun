@@ -31,8 +31,8 @@ public class RviewAdapter extends RecyclerView.Adapter<RviewHolder>{
     @Override
     public void onBindViewHolder(@NonNull RviewHolder holder, int position) {
         ItemCard currentItem = itemCardList.get(position);
-        holder.getName().setText(currentItem.getName());
-        holder.getUrl().setText(currentItem.getUrl());
+        holder.getNameView().setText(currentItem.getName());
+        holder.getUrlView().setText(currentItem.getUrl());
     }
 
     @Override

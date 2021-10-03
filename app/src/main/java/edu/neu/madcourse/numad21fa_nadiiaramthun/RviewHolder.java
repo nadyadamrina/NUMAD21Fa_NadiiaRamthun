@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RviewHolder extends RecyclerView.ViewHolder {
 
-    private final TextView name;
-    private final TextView url;
+    private final TextView nameView;
+    private final TextView urlView;
 
     public RviewHolder(@NonNull View itemView, final ItemClickListener listener) {
         super(itemView);
-        name = itemView.findViewById(R.id.txtName);
-        url = itemView.findViewById(R.id.txtLink);
+        nameView = itemView.findViewById(R.id.txtName);
+        urlView = itemView.findViewById(R.id.txtLink);
 
         itemView.setOnClickListener(getOnClickListener(listener));
     }
@@ -31,12 +31,12 @@ public class RviewHolder extends RecyclerView.ViewHolder {
         };
     }
 
-    public TextView getName() {
-        return name;
+    public TextView getNameView() {
+        return nameView;
     }
 
-    public TextView getUrl() {
-        return url;
+    public TextView getUrlView() {
+        return urlView;
     }
 
 }
