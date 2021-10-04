@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -85,16 +86,19 @@ public class LinkCollectorActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         rviewAdapter = new RviewAdapter(itemList);
-        ItemClickListener itemClickListener = getItemClickListener();
+        ItemClickListener itemClickListener = openWebBrowser();
         rviewAdapter.setOnItemClickListener(itemClickListener);
         recyclerView.setAdapter(rviewAdapter);
         recyclerView.setLayoutManager(rLayoutManger);
     }
 
     @NonNull
-    private ItemClickListener getItemClickListener() {
+    private ItemClickListener openWebBrowser() {
         return position -> {
-            itemList.get(position).onItemClick(position);
+            ItemCard itemCard = itemList.get(position);
+            Uri webpage = Uri.parse(itemCard.getUrl());
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            startActivity(webIntent);
             rviewAdapter.notifyItemChanged(position);
         };
     }

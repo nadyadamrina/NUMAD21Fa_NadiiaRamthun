@@ -40,7 +40,7 @@ public class UserInputAcitivity extends AppCompatActivity {
             setResult(RESULT_OK, data);
             finish();
         } catch (MalformedURLException error) {
-            Snackbar.make(view, "Please enter valid URL", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(view, "Please enter valid URL (ex. http://example.com)", Snackbar.LENGTH_LONG).show();
         }
     }
 }
