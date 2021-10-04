@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,13 +60,17 @@ public class LinkCollectorActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        View parentLayout = findViewById(android.R.id.content);
         if (requestCode == Constants.CODE && resultCode == RESULT_OK) {
             String name = data.getExtras().getString(Constants.NAME);
             String url = data.getExtras().getString(Constants.URL);
             itemList.add(0, new ItemCard(name, url));
-            Toast.makeText(LinkCollectorActivity.this, "Add an item", Toast.LENGTH_LONG).show();
+
+            Snackbar.make(parentLayout, "Add an item", Snackbar.LENGTH_LONG).show();
 
             rviewAdapter.notifyItemInserted(0);
+        } else {
+            Snackbar.make(parentLayout, "Couldn't add an item due to the URL format", Snackbar.LENGTH_LONG).show();
         }
     }
 
