@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -35,7 +35,7 @@ public class LinkCollectorActivity extends AppCompatActivity {
         createRecyclerView();
 
         addButton = findViewById(R.id.btn_add);
-        addButton.setOnClickListener(view -> addItem(0));
+        addButton.setOnClickListener(view -> openUserInputActivity());
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -52,14 +52,25 @@ public class LinkCollectorActivity extends AppCompatActivity {
             }
         });
         itemTouchHelper.attachToRecyclerView(recyclerView);
+
     }
 
-    private void addItem(int position) {
-        // TODO: fix me
-        itemList.add(position, new ItemCard("TEST NAME", "TEST URL"));
-        Toast.makeText(LinkCollectorActivity.this, "Add an item", Toast.LENGTH_SHORT).show();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == Constants.CODE && resultCode == RESULT_OK) {
+            String name = data.getExtras().getString(Constants.NAME);
+            String url = data.getExtras().getString(Constants.URL);
+            itemList.add(0, new ItemCard(name, url));
+            Toast.makeText(LinkCollectorActivity.this, "Add an item", Toast.LENGTH_LONG).show();
 
-        rviewAdapter.notifyItemInserted(position);
+            rviewAdapter.notifyItemInserted(0);
+        }
+    }
+
+    private void openUserInputActivity() {
+        Intent intent = new Intent(this, UserInputAcitivity.class);
+        startActivityForResult(intent, Constants.CODE);
     }
 
     private void createRecyclerView() {
@@ -108,6 +119,5 @@ public class LinkCollectorActivity extends AppCompatActivity {
                 }
             }
         }
-
     }
 }

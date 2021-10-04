@@ -19,4 +19,5 @@
     <string name="add_item">Add item</string>
     <string name="name">name</string>
     <string name="url">url</string>
+    <string name="ok">Ok</string>
 </resources>
