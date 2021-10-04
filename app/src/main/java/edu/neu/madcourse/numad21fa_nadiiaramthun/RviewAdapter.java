@@ -24,7 +24,7 @@ public class RviewAdapter extends RecyclerView.Adapter<RviewHolder>{
     @NonNull
     @Override
     public RviewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_link_collector, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
         return new RviewHolder(view, listener);
     }
 
