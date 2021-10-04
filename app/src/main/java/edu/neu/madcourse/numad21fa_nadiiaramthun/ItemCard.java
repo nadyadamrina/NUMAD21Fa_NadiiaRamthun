@@ -1,5 +1,8 @@
 package edu.neu.madcourse.numad21fa_nadiiaramthun;
 
+import android.content.Intent;
+import android.net.Uri;
+
 public class ItemCard implements ItemClickListener {
     private final String name;
     private final String url;
@@ -19,6 +22,6 @@ public class ItemCard implements ItemClickListener {
 
     @Override
     public void onItemClick(int position) {
-        // TODO: open url in a browser
+
     }
 }

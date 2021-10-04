@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_about: {
-                Toast.makeText(view.getContext(), "Nadiia Ramthun\nramthun.n@northeastern.edu", Toast.LENGTH_LONG).show();
+                View parentLayout = findViewById(android.R.id.content);
+                Snackbar.make(parentLayout, "Nadiia Ramthun\nramthun.n@northeastern.edu", Snackbar.LENGTH_LONG).show();
                 break;
             }
             case R.id.btn_clicky_clicky: {

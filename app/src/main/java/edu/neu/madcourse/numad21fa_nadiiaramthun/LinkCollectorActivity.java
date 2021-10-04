@@ -70,7 +70,7 @@ public class LinkCollectorActivity extends AppCompatActivity {
 
             rviewAdapter.notifyItemInserted(0);
         } else {
-            Snackbar.make(parentLayout, "Couldn't add an item due to the URL format", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(parentLayout, "Couldn't add an item (Cancelled)", Snackbar.LENGTH_LONG).show();
         }
     }
 

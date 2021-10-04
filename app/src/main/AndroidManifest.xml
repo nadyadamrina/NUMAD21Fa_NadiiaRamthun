@@ -11,6 +11,7 @@
         android:theme="@style/Theme.NUMAD21Fa_NadiiaRamthun">
         <activity
             android:name=".UserInputAcitivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true" />
         <activity
             android:name=".LinkCollectorActivity"

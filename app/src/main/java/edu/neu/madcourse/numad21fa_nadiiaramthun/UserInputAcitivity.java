@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -26,11 +28,6 @@ public class UserInputAcitivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        finish();
-    }
-
-    @Override
-    public void finish() {
         Intent data = new Intent();
 
         String name = nameTxt.getText().toString();
@@ -41,10 +38,9 @@ public class UserInputAcitivity extends AppCompatActivity {
             data.putExtra(Constants.NAME, name);
             data.putExtra(Constants.URL, url);
             setResult(RESULT_OK, data);
+            finish();
         } catch (MalformedURLException error) {
-            setResult(RESULT_CANCELED);
+            Snackbar.make(view, "Please enter valid URL", Snackbar.LENGTH_LONG).show();
         }
-
-        super.finish();
     }
 }
