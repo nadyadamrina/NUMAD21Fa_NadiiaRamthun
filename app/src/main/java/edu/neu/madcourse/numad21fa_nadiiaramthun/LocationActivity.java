@@ -34,11 +34,16 @@ public class LocationActivity extends AppCompatActivity {
             String msg;
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 msg = "Permission granted";
+                displayLocation();
             } else {
                 msg = "Permission denied";
             }
 
             Snackbar.make(findViewById(android.R.id.content), msg, Snackbar.LENGTH_LONG).show();
         }
+    }
+
+    private void displayLocation() {
+
     }
 }
