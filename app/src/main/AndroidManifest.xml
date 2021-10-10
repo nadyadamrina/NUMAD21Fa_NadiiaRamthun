@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21Fa_NadiiaRamthun">
         <activity
-            android:name=".UserInputAcitivity"
-            android:windowSoftInputMode="adjustResize"
+            android:name=".LocationActivity"
             android:exported="true" />
+        <activity
+            android:name=".UserInputAcitivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".LinkCollectorActivity"
             android:exported="true" />

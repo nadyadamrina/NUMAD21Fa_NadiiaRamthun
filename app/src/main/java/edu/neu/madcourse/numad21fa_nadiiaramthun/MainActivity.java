@@ -32,7 +32,16 @@ public class MainActivity extends AppCompatActivity {
                 openLinkCollectorActivity();
                 break;
             }
+            case R.id.btn_location: {
+                openLocationActivity();
+                break;
+            }
         }
+    }
+
+    private void openLocationActivity() {
+        Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
     }
 
     public void openLinkCollectorActivity() {
