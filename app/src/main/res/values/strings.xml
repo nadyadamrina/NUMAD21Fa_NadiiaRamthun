@@ -24,4 +24,6 @@
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
     <string name="service">Service</string>
+    <string name="nationalities">Nationalities</string>
+    <string name="number_of_users">Number of users</string>
 </resources>
