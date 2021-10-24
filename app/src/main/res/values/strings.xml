@@ -23,4 +23,5 @@
     <string name="location">Location</string>
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
+    <string name="service">Service</string>
 </resources>
