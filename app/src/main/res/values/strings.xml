@@ -19,7 +19,7 @@
     <string name="add_item">Add item</string>
     <string name="name">name</string>
     <string name="url">url</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="location">Location</string>
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
@@ -42,4 +42,11 @@
     <string name="au">AU</string>
     <string name="fi">FI</string>
     <string name="nl">NL</string>
+    <string name="email">email</string>
+
+    <string-array name="genders">
+        <item>all</item>
+        <item>female</item>
+        <item>male</item>
+    </string-array>
 </resources>
